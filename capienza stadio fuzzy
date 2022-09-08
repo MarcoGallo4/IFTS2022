@@ -1,0 +1,88 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyMhOOdKrMqAj7cBtwlluM6g",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MarcoGallo4/IFTS2022/blob/main/capienza%20stadio%20fuzzy\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def or_f(x,y):\n",
+        "  return max(x,y)\n",
+        "\n",
+        "def not_f(x):\n",
+        "  return 1-x\n"
+      ],
+      "metadata": {
+        "id": "emDDnzGxsQQ9"
+      },
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "EHpVYWG70HVX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sens_1=float(input('Quanti posti disponibili sul sensore 1: '))\n",
+        "sens_2=float(input('Quante posti disponibili sul sensore 2: '))\n",
+        "\n",
+        "tot = float(input('Quante posti totali: '))\n",
+        "fuzzy_1=sens_1/tot\n",
+        "fuzzy_2=sens_2/tot\n",
+        "occupati_stimati = or_f(fuzzy_1,fuzzy_2)\n",
+        "disp = not_f(occupati_stimati)\n",
+        "\n",
+        "print(f'La percentuale di posti disponibili è {disp}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vPfMu9T3uIhH",
+        "outputId": "4bef06df-a777-4e37-803f-597175a74c24"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Quanti posti disponibili sul sensore 1: 5\n",
+            "Quante posti disponobili sul sensore 2: 8\n",
+            "Quante posti totali: 123\n",
+            "La percentuale di posti disponibili è 0.9349593495934959\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
